@@ -238,7 +238,7 @@ public class IndexAnalysis {
                        "while ( result.hasNext() ) {\n" +
                        "   printjson( result.next() );\n" +
                        "}\n\n");
-               writer.write("db.tasks.update({\"manager\": " + managerList.get(i % managerList.size()) + "}, { $set : {'hasBugs': [], \"status\": " + status[i % 3] + "}})\n\n");
+               writer.write("db.tasks.update({\"manager\": \"" + managerList.get(i % managerList.size()) + "\"}, { $set : {'hasBugs': [], \"status\": \"" + status[i % 3] + "\"}})\n\n");
                writer.write("result = db.tasks.find({ budget: {$gte: " + lowBound + ", $lte: " + highBound + "}}).limit(" + limitNum + ");\n" +
                        "while ( result.hasNext() ) {\n" +
                        "   printjson( result.next() );\n" +
